@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap');
+
+:root{
+  --cor1: #403C3E;
+  --cor2: #1D191B;
+
+  --dark-grey: #333333;
+  --light-grey: #808080;
+  --yellow: #ffb612;
+  --red: #dc0a17;
+  --green: #2fc022;
+}
+
+
+/* Aplicando a fonte ao projeto */
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Classes de peso de fonte */
+.roboto-light {
+  font-weight: 300;
+}
+
+.roboto-medium {
+  font-weight: 500;
+}
+
+.roboto-bold {
+  font-weight: 700;
+}
+
+.roboto-black {
+  font-weight: 900;
+}
+
+/* Estilo com variações (opcional) */
+.roboto-variable {
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
