@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="input-group">
+    <input 
+      type="text" 
+      [(ngModel)]="userInput"
+      (keyup.enter)="sendToApi()"
+      placeholder="Digite algo..."
+    />
+    <button type="button" (click)="sendToApi()" [disabled]="isLoading">
+      {{ isLoading ? 'Enviando...' : 'Enviar' }}
+    </button>
+  </div>
+  
+  <div class="response" *ngIf="apiResponse">
+    <h3>Resposta da API:</h3>
+    <pre>{{ apiResponse | json }}</pre>
+  </div>
+  
+  <div class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+</div>
