@@ -9,24 +9,24 @@ footer {
     padding: 22px;
     gap: 24px;
     background-color: var(--dark-grey);
+    font-size: large;
   }
 
   .social-links {
     display: flex;
-    justify-content: space-evenly;          /* Coloca os itens em linha */
     gap: 20px;              /* Espaçamento entre os itens */
-    list-style: none;       /* Remove os marcadores de lista */
-    padding: 0;             /* Remove padding padrão */
-    margin: 0;              /* Remove margem padrão */
+    list-style: none;       
+    padding: 0;             
+    margin: 0;              
   }
   
   .social-links a {
-    color: white;           /* Cor do texto */
-    text-decoration: none;  /* Remove sublinhado */
-    transition: color 0.3s; /* Efeito de transição suave */
+    color: white;          
+    text-decoration: none;  
+    transition: color 0.3s; 
   }
   
   .social-links a:hover {
-    color: #4dabf7;        /* Cor ao passar o mouse */
-    text-decoration: underline; /* Opcional: adiciona sublinhado no hover */
+    color: #4dabf7;        
+    text-decoration: underline; 
   }
