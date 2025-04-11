@@ -17,7 +17,7 @@ export class InputTextApiComponent {
   errorMessage = '';
   isLoading = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   async sendToApi() {
     if (!this.userInput.trim()) {
@@ -32,7 +32,7 @@ export class InputTextApiComponent {
     try {
       // Substitua pela URL da sua API real
       const apiUrl = 'http://localhost:8080/shorten-url';
-      
+
       //this.apiResponse = await this.http.post(apiUrl, { url: this.userInput}).toPromise();
       this.apiResponse = await firstValueFrom(
         this.http.post(apiUrl, { url: this.userInput })
@@ -45,5 +45,18 @@ export class InputTextApiComponent {
     }
   }
 
+  copied = false;
+  copyToClipboard(text: string) {
+    navigator.clipboard.writeText(text).then(() => {
+      this.copied = true;
+
+      setTimeout(() => {
+        this.copied = false;
+      }, 2000);
+    }).catch(err => {
+      console.error('Erro ao copiar:', err);
+      this.errorMessage = 'Não foi possível copiar a URL';
+    });
+  }
 
 }

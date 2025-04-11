@@ -10,10 +10,15 @@
       {{ isLoading ? 'Enviando...' : 'Enviar' }}
     </button>
   </div>
-  
+
   <div class="response" *ngIf="apiResponse">
     <h3>Resposta da API:</h3>
     <pre>{{ apiResponse | json }}</pre>
+  
+    <button (click)="copyToClipboard(apiResponse.url)">
+      Copiar URL
+    </button>
+    <div *ngIf="copied" class="copy-msg">URL copiada!</div>
   </div>
   
   <div class="error" *ngIf="errorMessage">
