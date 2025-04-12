@@ -31,8 +31,8 @@ export class InputTextApiComponent {
 
     try {
       // Substitua pela URL da sua API real
-      const apiUrl = 'http://localhost:8080/shorten-url';
-
+      // const apiUrl = 'http://localhost:8080/shorten-url';
+      const apiUrl = 'https://encurtador-url-8lqz.onrender.com/shorten-url';
       //this.apiResponse = await this.http.post(apiUrl, { url: this.userInput}).toPromise();
       this.apiResponse = await firstValueFrom(
         this.http.post(apiUrl, { url: this.userInput })
