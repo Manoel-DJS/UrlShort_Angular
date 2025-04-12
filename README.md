@@ -1,59 +1,77 @@
-# FrontUrlShort
+# 🌐 Frontend - Encurtador de URL
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+Este é o frontend simples desenvolvido em **Angular** para consumir a API REST de encurtamento de URLs.
 
-## Development server
+🔗 API utilizada: [https://encurtador-url-8lqz.onrender.com/shorten-url](https://encurtador-url-8lqz.onrender.com/shorten-url)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🖼️ Visão Geral
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A aplicação possui uma interface simples e intuitiva, onde o usuário insere uma URL longa e recebe uma versão encurtada, consumindo diretamente o endpoint `/shorten-url` da API hospedada no Render.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Funcionalidades
 
-```bash
-ng generate component component-name
-```
+- ✅ Inserir uma URL longa.
+- 🔗 Obter instantaneamente a URL encurtada.
+- 📋 Copiar facilmente o link encurtado.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🧱 Tecnologias Utilizadas
 
-## Building
+- [Angular](https://angular.io/)  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [SCSS](https://sass-lang.com/)
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## ▶️ Como Executar o Projeto
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- [https://url-short-angular.vercel.app/](https://url-short-angular.vercel.app/)
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 🔍 Pré-requisitos
 
-```bash
-ng test
-```
+- Node.js (recomendado: versão LTS)
+- Angular CLI instalado globalmente:
+  ```bash
+  npm install -g @angular/cli
 
-## Running end-to-end tests
+## ⚙️ Passos para rodar localmente
 
-For end-to-end (e2e) testing, run:
+### 1. Clone o repositório:
 
 ```bash
-ng e2e
+git clone [https://github.com/Manoel-DJS/ENCURTADOR_URL.git]
+cd [NOME_DO_PROJETO]
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 2. Instale as dependências:
+```bash
+npm install
+```
 
-## Additional Resources
+### 3. Execute o projeto
+```bash
+npm ng serve
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 4. Clone o repositório:
+```bash
+local http://localhost:4200
+```
+
+---
+
+## 🧪 Testes
+
+- Não há testes automatizados implementados neste projeto no momento, mas o comportamento pode ser testado diretamente pela interface visual.
+
+---
+
+## Link do Repo API
+- [API/ENCURTADOR_URL](https://github.com/Manoel-DJS/ENCURTADOR_URL)
