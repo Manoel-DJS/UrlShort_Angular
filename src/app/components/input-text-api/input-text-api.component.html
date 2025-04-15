@@ -3,7 +3,7 @@
     <input 
       type="text" 
       [(ngModel)]="userInput"
-      (keyup.enter)="sendToApi()"
+      ((click))="sendToApi()" 
       placeholder="Digite algo..."
     />
     <button type="button" (click)="sendToApi()" [disabled]="isLoading">
@@ -25,3 +25,5 @@
     {{ errorMessage }}
   </div>
 </div>
+
+<!--alter - keyup.enter (click) -->
