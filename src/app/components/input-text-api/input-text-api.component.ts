@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { firstValueFrom, lastValueFrom } from 'rxjs';
+import { ApiResponseService } from '../../services/api-response.service';
+import { ShortenedUrlResponse } from '../../models/ShortenedUrlResponse';
 
 @Component({
   selector: 'app-input-text-api',
@@ -12,10 +14,55 @@ import { firstValueFrom, lastValueFrom } from 'rxjs';
 })
 export class InputTextApiComponent {
 
-  userInput = '';
-  apiResponse: any;
-  errorMessage = '';
-  isLoading = false;
+  userInput: string = '';
+  apiResponse: ShortenedUrlResponse | null = null;
+  errorMessage: string = '';
+  isLoading: boolean = false;
+
+  constructor(private ApiResponseService : ApiResponseService ) {}
+
+  async sendToApi() {
+    if (!this.userInput.trim()) {
+      this.errorMessage = 'Por favor, digite algo antes de enviar';
+      return;
+    }
+
+    this.isLoading = true;
+    this.errorMessage = '';
+    this.apiResponse = null;
+
+    try {
+      this.apiResponse = await this.ApiResponseService.shortenUrl(this.userInput);
+    } catch (error: any) {
+      this.errorMessage = error.message || 'Erro desconhecido';
+    } finally {
+      this.isLoading = false;
+    }
+  }
+
+  
+  copied: boolean = false;
+  copyToClipboard(text: string) {
+    navigator.clipboard.writeText(text).then(() => {
+      this.copied = true;
+      console.log('Erro ao copiar:', this.apiResponse?.url)
+      setTimeout(() => {
+        this.copied = false;
+      }, 2000);
+    }).catch(err => {
+      console.error('Erro ao copiar:', err);
+      this.errorMessage = 'Não foi possível copiar a URL';
+    });
+  }
+
+}
+
+/** 
+
+  userInput: string = '';
+  apiResponse: any; // substitua "YourExpectedType" pelo tipo real esperado
+  errorMessage: string = '';
+  isLoading: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -59,4 +106,4 @@ export class InputTextApiComponent {
     });
   }
 
-}
+**/

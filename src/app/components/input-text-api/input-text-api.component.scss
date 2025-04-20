@@ -63,6 +63,9 @@ button:disabled {
 }
 
 pre {
+  display: flex;
+  justify-content: center;
+  padding: 14px;
   white-space: pre-wrap;
   word-wrap: break-word;
   text-align: left;
